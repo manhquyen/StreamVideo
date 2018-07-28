@@ -1,0 +1,30 @@
+{
+  "name": "stream-video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "dev:server": "cd client && yarn build && cd .. && yarn start",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/manhquyen/StreamVideo"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.1"
+  },
+  "author": "QuyenNM",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^1.4.1",
+    "@material-ui/icons": "^2.0.0",
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1"
+  }
+}
